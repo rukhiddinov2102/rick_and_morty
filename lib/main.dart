@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sample/app.dart';
+import 'package:sample/core/theme/bloc/theme_bloc.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      home: HomePage(),
+    BlocProvider(
+      create: (context) => ThemeBloc(),
+      child: const MyApp(),
     ),
   );
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
 }
